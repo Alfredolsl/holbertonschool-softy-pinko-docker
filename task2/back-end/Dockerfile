@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y python3 python3-pip
+
+RUN pip3 install flask
+
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+copy . /app
+
+EXPOSE 5252
+
+CMD ["python3", "api.py"]
