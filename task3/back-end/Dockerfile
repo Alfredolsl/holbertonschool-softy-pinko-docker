@@ -10,7 +10,7 @@ RUN pip3 install flask-cors
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-copy . /app
+COPY . /app
 
 EXPOSE 5252
 
